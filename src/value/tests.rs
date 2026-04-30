@@ -445,10 +445,7 @@ fn test_null_array_is_not_empty() {
 fn test_null_in_array_ignored() {
     let v: Value = Value::Array(
         ArrayType::Int,
-        Some(Box::new(vec![
-            Value::Int(None),
-            Value::Int(Some(1)),
-        ])),
+        Some(Box::new(vec![Value::Int(None), Value::Int(Some(1))])),
     );
     let out: Vec<i32> = v.unwrap();
     assert_eq!(out, vec![1]);
